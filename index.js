@@ -54,7 +54,6 @@ async function run() {
         const updateDoc = {
           $set: {
               confirm: true
-
           }
       }
       const result = await taskCollection.updateOne(filter, updateDoc, options);
@@ -62,29 +61,26 @@ async function run() {
             console.log(result)
       })
 
-      app.put('/updateTask', async (req, res) => {
-        const updateTask = req.body;
-        console.log(updateTask)
-        // const filter = {
-        //     _id: ObjectId(addTask.id)
-        // }
 
-        // const option = { upsert: false };
-        // const updateDoc = {
-        //     $set: {
-
-        //         TaskTitle: addTask.TaskTitle,
-        //         TaskSubTitle: addTask.TaskSubTitle,
-        //         StartTime: addTask.StartTime,
-        //         EndTime: addTask.EndTime,
-        //         TaskDescription: addTask.TaskDescription
-
-        //     }
-        // }
-        // const result = await mytaskCollection.updateOne(filter, updateDoc, option);
-        // res.send(result)
-        // console.log(result);
-    })
+    //   app.put('/updateTask', async (req, res) => {
+    //     const updateTask = req.body;
+        
+    //     const filter = {
+    //         _id: ObjectId(updateTask.id)
+    //     }
+    //     const option = { upsert: false };
+    //     const updateDoc = {
+    //         $set: {
+    //           title: updateTask.title,
+    //             description: updateTask.description,
+    //         }
+    //     }
+    //     console.log(updateDoc)
+    //     const result = await taskCollection.updateOne(filter, updateDoc, option);
+    //     console.log(result);
+    //     res.send(result)
+        
+    // })
     
 
   } finally {
